@@ -26,9 +26,7 @@
         <h2>Dados do evento</h2>
 
         Inscritos:<input type="number" id="inscritos" readonly><br>
-        <button onclick="localStorage.removeItem('inscritos');">
-        Remover do Armazamento
-        </button>
+        <button onclick="localStorage.removeItem('inscritos');">Remover do Armazamento</button>
 
         <div>
             <h2>Custos de Produtos Alimenticios</h2>
@@ -86,31 +84,35 @@
                 <tr>
                     <td>Camiseta</td>
                     <td><input type="number" id="n11"></td>
-                    <td><input type="number" id="n12" placeholder="R$"onblur="multiplicar()"></td>
+                    <td><input type="number" id="n12" placeholder="R$"onblur="multiplicar(), somar(), somardivul(), somatotal()" ></td>
                     <td><input type="text" readonly id="resultado6" /></td>
                 </tr>
             </table>
         </div>
         <div>
             <h2>Custos Totais</h2>
-            <table border="1">
+            <table>
                 <tr>
                     <th>Tipo</th>
                     <th>Total</th>
                 </tr>
                 <tr>
                     <td>Produtos Alimenticios</td>
-                    <td></td>
+                    <td><input type="text" readonly id="totalalimentos" /></td>
                 </tr>
                 <tr>
                     <td>Divulgação</td>
-                    <td></td>
+                    <td><input type="text" readonly id="totaldivul" /></td>
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td></td>
+                    <td><input type="text" readonly id="somatotal" /></td>
                 </tr>
             </table>
+        </div>
+        <div>
+            <button onclick="montartexto()">Montar Texto</button>
+            <textarea name="texto" id="texto" rows="15" cols="30"></textarea>
         </div>
     </body>
 </html>
