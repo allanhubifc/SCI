@@ -84,7 +84,7 @@
                 <tr>
                     <td>Camiseta</td>
                     <td><input type="number" id="n11"></td>
-                    <td><input type="number" id="n12" placeholder="R$"onblur="multiplicar(), somar(), somardivul(), somatotal()" ></td>
+                    <td><input type="number" id="n12" placeholder="R$" onblur="multiplicar(), somar(), somardivul(), somatotal()" ></td>
                     <td><input type="text" readonly id="resultado6" /></td>
                 </tr>
             </table>
@@ -111,8 +111,8 @@
             </table>
         </div>
         <div>
-            <button onclick="montartexto()">Montar Texto</button>
-            <textarea name="texto" id="texto" rows="15" cols="30"></textarea>
+            <button onclick="montartexto(), imprimir(), moedas()">Montar Texto</button>
+            <textarea name="texto" id="texto" rows="10" cols="50" readonly></textarea>
         </div>
     </body>
 </html>

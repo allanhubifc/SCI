@@ -2,6 +2,10 @@ function gebi(id){
     return document.getElementById(id)
 }
 
+function imprimir(algo) {
+    document.write(algo + "<br>");
+}
+
 function multiplicar() {
     let valorN1 = parseInt(gebi("n1").value);
     let valorN2 = parseInt(gebi("n2").value)
@@ -48,10 +52,18 @@ function somardivul(){
 function somatotal(){
     let valort1 = parseInt(gebi("totalalimentos").value)
     let valort2 = parseInt(gebi("totaldivul").value)
-    let somatotal = valort1 += valort2  
-    gebi("somatotal").value = ("R$ " + somatotal)
+    let total1 = valort1 += valort2  
+    gebi("somatotal").value = ("R$ " + total1)
+}
+
+function moedas(){
+    let dolar = total1 / 5.11
+    let euro = total1 / 5.41
+    imprimir(dolar, euro)
 }
 
 function montartexto(){
-    gebi("texto").value = ("O total em reais de comida vendida foi " + totalalimentos + ", o total em reais de itens de divulgação foi " + totaldivul + ", o total de itens em reais vendidos no evento foi de " + somatotal)
+    gebi("texto").value = "0"
 }
+
+//"O total em reais de comida vendida foi " + totalalimentos + ", o total em reais de itens de divulgação foi " + totaldivul + ", o total de itens em reais vendidos no evento foi de " + total
