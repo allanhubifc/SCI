@@ -2,10 +2,6 @@ function gebi(id){
     return document.getElementById(id)
 }
 
-function imprimir(algo) {
-    document.write(algo + "<br>");
-}
-
 function multiplicar() {
     let valorN1 = parseInt(gebi("n1").value);
     let valorN2 = parseInt(gebi("n2").value)
@@ -53,17 +49,33 @@ function somatotal(){
     let valort1 = parseInt(gebi("totalalimentos").value)
     let valort2 = parseInt(gebi("totaldivul").value)
     let total1 = valort1 += valort2  
-    gebi("somatotal").value = ("R$ " + total1)
+    gebi("somatotal").value = "R$ " + total1
 }
 
 function moedas(){
     let dolar = total1 / 5.11
     let euro = total1 / 5.41
-    imprimir(dolar, euro)
 }
 
 function montartexto(){
-    gebi("texto").value = "0"
+    let qtdCafe = gebi("n1").value
+    let qtdBolo = gebi("n3").value
+    let qtdHotdog = gebi("n5").value
+    let qtdBanner = gebi("n7").value
+    let qtdCracha = gebi("n9").value
+    let qtdCamiseta = gebi("n11").value
+    let totalCafe = gebi("resultado1").value
+    let totalBolo = gebi("resultado2").value
+    let totalHotdog = gebi("resultado3").value
+    let totalBanner = gebi("resultado4").value
+    let totalCracha = gebi("resultado5").value
+    let totalCamiseta = gebi("resultado6").value
+    let pdrAlimentos = gebi("totalalimentos").value
+    let pdrDivul = gebi("totaldivul").value
+    let pdrTotal = gebi("somatotal").value
+    gebi("texto").value = "O evento contando com " + inscritos + " inscritos vendeu " + qtdCafe + " cafés rendendo R$" + totalCafe + ", vendeu " + qtdBolo + " bolos rendendo R$" + totalBolo
+    + ", vendeu " + qtdHotdog + " cachorros-quentes  rendendo R$" + totalHotdog + ",  vendeu " + qtdBanner + " benners rendendo R$" + totalBanner + ", vendeu" + qtdCracha + " crachás rendendo R$"
+    + totalCracha + ", vendeu " + qtdCamiseta + " camisetas rendendo R$" + totalCamiseta + "." + "O evento lucrou R$" + pdrAlimentos + " com alimentos" + ", com divulgação lucrou "
+    + pdrDivul + " ao total lucrou R$" + pdrTotal
 }
 
-//"O total em reais de comida vendida foi " + totalalimentos + ", o total em reais de itens de divulgação foi " + totaldivul + ", o total de itens em reais vendidos no evento foi de " + total
