@@ -84,7 +84,7 @@
                 <tr>
                     <td>Camiseta</td>
                     <td><input type="number" id="n11"></td>
-                    <td><input type="number" id="n12" placeholder="R$" onblur="multiplicar(), somar(), somardivul(), somatotal()" ></td>
+                    <td><input type="number" id="n12" placeholder="R$" onblur="multiplicar(), somar(), moedas()" ></td>
                     <td><input type="text" readonly id="resultado6" /></td>
                 </tr>
             </table>
@@ -95,47 +95,30 @@
                 <tr>
                     <th>Tipo</th>
                     <th>Total</th>
+                    <th>Dolar</th>
+                    <th>Euro</th>
                 </tr>
                 <tr>
                     <td>Produtos Alimenticios</td>
                     <td><input type="text" readonly id="totalalimentos" /></td>
+                    <td><input type="text" readonly id="dolar1"></td>
+                    <td><input type="text" readonly id="euro1"></td>
                 </tr>
                 <tr>
                     <td>Divulgação</td>
                     <td><input type="text" readonly id="totaldivul" /></td>
+                    <td><input type="text" readonly id="dolar2"></td>
+                    <td><input type="text" readonly id="euro2"></td>
                 </tr>
                 <tr>
                     <td>Total</td>
                     <td><input type="text" readonly id="somatotal" /></td>
+                    <td><input type="text" readonly id="dolar3"></td>
+                    <td><input type="text" readonly id="euro3"></td>
                 </tr>
-                <tr>
-                    <th>Em Dolar</th>
-                </tr>
-                <tr>
-                    <td><input type="text" readonly id="dolar1" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" readonly id="dolar2" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" readonly id="dolar3" /></td>
-                </tr>
-                <tr>
-                    <th>Em Euro</th>
-                </tr>
-                <tr>
-                    <td><input type="text" readonly id="euro1" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" readonly id="euro2" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" readonly id="euro3" /></td>
-                </tr>
-            </table>
         </div>
         <div>
-            <button onclick="montartexto(), moedas()">Montar Texto</button>
+            <button onclick="montartexto()">Montar Texto</button>
             <textarea name="texto" id="texto" rows="10" cols="50" readonly></textarea>
         </div>
     </body>

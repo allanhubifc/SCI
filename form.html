@@ -1,13 +1,35 @@
-<html>
-    <head>
-
-    </head>
-    <body>
-        Nome do Aluno<input id="aluno" required>
-        Número de Matrícula<input id="matricula" required>
-        CPF<input id="CPF">
-        Email<input id="email">
-        turma<input id="turma">
-        <button>Enviar formulário</button>
-    </body>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Contato com JavaScript</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <form action="http://jkorpela.fi/cgi-bin/echo.cgi">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" required />
+      <label for="matricula">Matrícula do Aluno</label>
+      <input type="number" name="matricula" id="matricula">
+      <label for="cpf">CPF</label>
+      <input type="text" name="cpf" id="cpf" placeholder="insira seu CPF (somente números)"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email" required />
+      <label for="turma">Turma</label>
+      <select name="turma" id="turma" required>
+        <option value="">Selecione</option>
+        <option value="Info 1A">Info 1A</option>
+        <option value="Info 1B">Info 1B</option>
+        <option value="Info 2A">Info 2A</option>
+        <option value="Info 2B">Info 2B</option>
+        <option value="Info 3A">Info 3A</option>
+        <option value="Info 3B">Info 3B</option>
+        <option value="Ciencias da Computação">Ciencias da Computação</option>
+      </select>
+      <button type="submit" data-button onclick="validar()">Enviar</button>
+    </form>
+  </body>
 </html>
