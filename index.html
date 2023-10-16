@@ -89,6 +89,7 @@
                 </tr>
             </table>
         </div>
+        
         <div>
             <h2>Custos Totais</h2>
             <table>
@@ -116,10 +117,14 @@
                     <td><input type="text" readonly id="dolar3"></td>
                     <td><input type="text" readonly id="euro3"></td>
                 </tr>
+            </table>
         </div>
         <div>
-            <button onclick="montartexto()">Montar Texto</button>
-            <textarea name="texto" id="texto" rows="10" cols="50" readonly></textarea>
+            <form action="https://app.headlessforms.cloud/api/v1/form-submission/nkJtA1ewcj" id="calcForm" method="POST">
+                <input  type="button" value="Montar texto" onclick="montartexto()">
+                <textarea name="texto" id="texto" rows="10" cols="50" readonly></textarea>
+                <input  type="submit" value="Enviar" onclick="montartexto()">
+            </form>
         </div>
     </body>
 </html>

@@ -11,15 +11,15 @@
   <body>
     <form action="http://jkorpela.fi/cgi-bin/echo.cgi">
       <label for="nome">Nome</label>
-      <input type="text" name="nome" id="nome" required />
+      <input type="text" id="nome" name="nome" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required />
       <label for="matricula">Matrícula do Aluno</label>
       <input type="number" name="matricula" id="matricula">
       <label for="cpf">CPF</label>
-      <input type="text" name="cpf" id="cpf" placeholder="insira seu CPF (somente números)"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+      <input type="text" name="cpf" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx"><input type="submit" value="Verificar">
       <label for="email">E-mail</label>
       <input type="email" name="email" id="email" required />
       <label for="turma">Turma</label>
-      <select name="turma" id="turma" required>
+      <select name="turma" id="turma" required/>
         <option value="">Selecione</option>
         <option value="Info 1A">Info 1A</option>
         <option value="Info 1B">Info 1B</option>
@@ -33,3 +33,8 @@
     </form>
   </body>
 </html>
+
+
+
+
+oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
