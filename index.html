@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="estilo.css" />
+        <script defer src="script.js"></script>
         <title>Armazamento</title>
-    <script>
-
-    
-        function recuperar(){
-        var total = localStorage.getItem('inscritos');
-        if(total !== null) {
-            alert('Total de inscritos: ' + total);
-        } else {
-            total = prompt('Digite o total de inscritos: ');
-            localStorage.setItem('inscritos', total);
-        }
-        document.getElementById('inscritos').value = total;
-    }
-        
-        
-    </script>
-    <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="script.js"></script>
     </head>
+
     <body onload="recuperar()">
         <h1>Calculadora de Orçamento para o evento SCI</h1>
 
@@ -38,20 +28,19 @@
                     <th>Total</th>
                 </tr>
                 <tr>
-                    <td>Café</td>
-                    <td><input type="number" id="n1"></td>
+                    <td class="pdr">Café</td>
+                    <td class="col-3"><input type="number" id="n1"></td>
                     <td><input type="number" id="n2" placeholder="R$"></td>
                     <td><input type="text" readonly id="resultado1" /></td>
                 </tr>
                 <tr>
-                    <td>Bolo</td>
+                    <td class="pdr">Bolo</td>
                     <td><input type="number" id="n3"></td>
                     <td><input type="number" id="n4" placeholder="R$"></td>
                     <td><input type="text" readonly id="resultado2" />
                 </tr>
-                </tr>
                 <tr>
-                    <td>Cachorro Quente</td>
+                    <td class="pdr">Cachorro Quente</td>
                     <td><input type="number" id="n5"></td>
                     <td><input type="number" id="n6" placeholder="R$"></td>
                     <td><input type="text" readonly id="resultado3" /></td>
@@ -69,20 +58,20 @@
                     <th>Total</th>
                 </tr>
                 <tr>
-                    <td>Banner</td>
-                    <td><input type="number" id="n7"></td>
+                    <td class="pdr">Banner</td>
+                    <td class="col-3"><input type="number" id="n7"></td>
                     <td><input type="number" id="n8" placeholder="R$"></td>
                     <td><input type="text" readonly id="resultado4" /></td>
                 </tr>
                 <tr>
-                    <td>Crachá</td>
+                    <td class="pdr">Crachá</td>
                     <td><input type="number" id="n9"></td>
                     <td><input type="number" id="n10" placeholder="R$"></td>
                     <td><input type="text" readonly id="resultado5" />
                 </tr>
                 </tr>
                 <tr>
-                    <td>Camiseta</td>
+                    <td class="pdr">Camiseta</td>
                     <td><input type="number" id="n11"></td>
                     <td><input type="number" id="n12" placeholder="R$" onblur="multiplicar(), somar(), moedas()" ></td>
                     <td><input type="text" readonly id="resultado6" /></td>
@@ -101,7 +90,7 @@
                 </tr>
                 <tr>
                     <td>Produtos Alimenticios</td>
-                    <td><input type="text" readonly id="totalalimentos" /></td>
+                    <td class="col-3"><input type="text" readonly id="totalalimentos" /></td>
                     <td><input type="text" readonly id="dolar1"></td>
                     <td><input type="text" readonly id="euro1"></td>
                 </tr>
@@ -123,7 +112,7 @@
             <form action="https://app.headlessforms.cloud/api/v1/form-submission/nkJtA1ewcj" id="calcForm" method="POST">
                 <input  type="button" value="Montar texto" onclick="montartexto()">
                 <textarea name="texto" id="texto" rows="10" cols="50" readonly></textarea>
-                <input  type="submit" value="Enviar" onclick="montartexto()">
+                <input  type="submit" value="Enviar">
             </form>
         </div>
     </body>
