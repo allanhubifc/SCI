@@ -7,6 +7,17 @@
     <title>Formulário de inscrição</title>
     <link rel="stylesheet" href="estilo.css" />
     <script defer src="script.js"></script>
+    <script>
+      function local() {
+          if (!localStorage.getItem('total_inscritos')) {
+              localStorage.setItem('total_inscritos', "0");
+          }
+
+          var totalInscritos = localStorage.getItem('total_inscritos');
+          totalInscritos = parseInt(totalInscritos, 10)+ 1;
+          localStorage.setItem('total_inscritos', totalInscritos);
+        }
+    </script>
   </head>
   <body>
     <form action="http://jkorpela.fi/cgi-bin/echo.cgi">
@@ -30,7 +41,7 @@
         <option value="Info 3B">Info 3B</option>
         <option value="Ciencias da Computação">Ciencias da Computação</option>
       </select>
-      <button type="submit" data-button onclick="validar()">Enviar</button>
+      <button type="submit" data-button onclick="local()">Enviar</button>
     </form>
   </body>
 </html>

@@ -93,8 +93,6 @@ function montartexto(){
     + pdrDivul + " ao total lucrou R$" + pdrTotal + " - feito por Allan F.Fantin e Arthur Gaio - "
 }
 
-var totalInscritos = 100;
-
 gebi("total_inscritos").value = totalInscritos
 gebi("n1").value = totalInscritos
 gebi("n3").value = totalInscritos
@@ -103,17 +101,13 @@ gebi("n7").value = totalInscritos
 gebi("n9").value = totalInscritos
 gebi("n11").value = totalInscritos
 
-localStorage.setItem("total_inscritos", totalInscritos.toString());
-
-function recuperar(){  
-    if(localStorage.getItem("total_inscritos")){
-        var totalInscritos = localStorage.getItem("total_inscritos");
-
-        totalInscritos = parseInt(totalInscritos, 10);
-
-        console.log("Número de participantes: " + totalInscritos);
-    }else{
-        console.log("A chave 'total_inscritos não está no localStorage");
+window.onload = function recupera(){
+    // Verifica se o localStorage possui o item com a chave "total_inscritos"
+    if (localStorage.getItem("total_inscritos")) {
+    // Recupera o valor associado à chave "total_inscritos"
+    var totalInscritos = localStorage.getItem("total_inscritos");
+    // Converte o valor para o tipo numérico, se necessário
+    totalInscritos = parseInt(totalInscritos, 10); // 10 é a base decimal
+    document.getElementById('numero_participantes').value = totalInscritos
     }
-
 }
