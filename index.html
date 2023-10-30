@@ -15,8 +15,9 @@
 
         <h2>Dados do evento</h2>
 
-        Inscritos:<input type="number" id="inscritos" readonly><br>
-        <button onclick="localStorage.removeItem('inscritos');">Remover do Armazamento</button>
+        <h3>Inscritos:</h3>
+        <input type="number" id="total_inscritos" readonly class="col-4"><br>
+        <button onclick="localStorage.removeItem('total_inscritos');">Remover do Armazamento</button>
 
         <div>
             <h2>Custos de Produtos Alimenticios</h2>
@@ -29,7 +30,7 @@
                 </tr>
                 <tr>
                     <td class="pdr">Café</td>
-                    <td class="col-3"><input type="number" id="n1"></td>
+                    <td class="col-3"><input type="text" id="n1" readonly></td>
                     <td><input type="number" id="n2" placeholder="R$"></td>
                     <td><input type="text" readonly id="resultado1" /></td>
                 </tr>

@@ -47,18 +47,20 @@ function somar(){
 }
 
 function moedas(){
+    let dolar = prompt('Digite o valor do Dólar')
+    let euro = prompt('Digite o valor do Euro')
     let dolar1 = gebi("totalalimentos").value
     let dolar2 = gebi("totaldivul").value
     let dolar3 = gebi("somatotal").value
     let euro1 = gebi("totalalimentos").value
     let euro2 = gebi("totaldivul").value
     let euro3 = gebi("somatotal").value
-    let rstdolar1 = dolar1 / 5.05
-    let rstdolar2 = dolar2 / 5.05
-    let rstdolar3 = dolar3 / 5.05
-    let rsteuro1 = euro1 / 5.31
-    let rsteuro2 = euro2 / 5.31
-    let rsteuro3 = euro3 / 5.31
+    let rstdolar1 = dolar1 / dolar
+    let rstdolar2 = dolar2 / dolar
+    let rstdolar3 = dolar3 / dolar
+    let rsteuro1 = euro1 / euro
+    let rsteuro2 = euro2 / euro
+    let rsteuro3 = euro3 / euro
     gebi("dolar1").value = "$" + rstdolar1
     gebi("dolar2").value = "$" + rstdolar2
     gebi("dolar3").value = "$" + rstdolar3
@@ -69,6 +71,7 @@ function moedas(){
 }
 
 function montartexto(){
+    let inscritos = gebi("total_inscritos").value
     let qtdCafe = gebi("n1").value
     let qtdBolo = gebi("n3").value
     let qtdHotdog = gebi("n5").value
@@ -90,17 +93,27 @@ function montartexto(){
     + pdrDivul + " ao total lucrou R$" + pdrTotal + " - feito por Allan F.Fantin e Arthur Gaio - "
 }
 
+var totalInscritos = 100;
 
-function recuperar(){
-  var total = localStorage.getItem('inscritos');
-  if(total !== null) {
-      alert('Total de inscritos: ' + total);
-  } else {
-      total = prompt('Digite o total de inscritos: ');
-      localStorage.setItem('inscritos', total);
-  }
-  document.getElementById('inscritos').value = total;
+gebi("total_inscritos").value = totalInscritos
+gebi("n1").value = totalInscritos
+gebi("n3").value = totalInscritos
+gebi("n5").value = totalInscritos
+gebi("n7").value = totalInscritos
+gebi("n9").value = totalInscritos
+gebi("n11").value = totalInscritos
+
+localStorage.setItem("total_inscritos", totalInscritos.toString());
+
+function recuperar(){  
+    if(localStorage.getItem("total_inscritos")){
+        var totalInscritos = localStorage.getItem("total_inscritos");
+
+        totalInscritos = parseInt(totalInscritos, 10);
+
+        console.log("Número de participantes: " + totalInscritos);
+    }else{
+        console.log("A chave 'total_inscritos não está no localStorage");
+    }
+
 }
-
-
-

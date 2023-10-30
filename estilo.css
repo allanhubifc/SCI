@@ -20,7 +20,8 @@ form {
     max-width: 30rem;
 }
 
-select label,
+select,
+label,
 input,
 textarea,
 button {
@@ -31,7 +32,7 @@ select,
 input,
 textarea,
 button {
-    width: 100%;
+
     font: Poppins;
     padding: 1.25rem;
     font-weight: 700;
@@ -102,16 +103,32 @@ button:disabled {
 }
 
 td,
-th,
-table,
-h1,
-h2 {
+th{
+    margin: auto;
+    color: #84868f;
+    text-align: center;
+}
+
+h1
+h3{
     margin: 1rem;
+    color: #84868f;
+
+}
+
+h2{
+    text-align: center;
+    margin: 5rem;
     color: #84868f;
 }
 
+
 .pdr {
     margin: 0.5rem;
+}
+
+.col-3 table tbody tr td{
+    text-align: left;
 }
 
 .col-1 {width: 8.33%;}
@@ -126,4 +143,3 @@ h2 {
 .col-10{width: 83.3%;}
 .col-11 {width:91.63%;}
 .col-12 {width: 100%;}
-
