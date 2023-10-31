@@ -71,7 +71,7 @@ function moedas(){
 }
 
 function montartexto(){
-    let inscritos = gebi("total_inscritos").value
+    let inscritos = gebi("numero_participantes").value
     let qtdCafe = gebi("n1").value
     let qtdBolo = gebi("n3").value
     let qtdHotdog = gebi("n5").value
@@ -93,13 +93,6 @@ function montartexto(){
     + pdrDivul + " ao total lucrou R$" + pdrTotal + " - feito por Allan F.Fantin e Arthur Gaio - "
 }
 
-gebi("total_inscritos").value = totalInscritos
-gebi("n1").value = totalInscritos
-gebi("n3").value = totalInscritos
-gebi("n5").value = totalInscritos
-gebi("n7").value = totalInscritos
-gebi("n9").value = totalInscritos
-gebi("n11").value = totalInscritos
 
 window.onload = function recupera(){
     // Verifica se o localStorage possui o item com a chave "total_inscritos"
@@ -110,4 +103,22 @@ window.onload = function recupera(){
     totalInscritos = parseInt(totalInscritos, 10); // 10 é a base decimal
     document.getElementById('numero_participantes').value = totalInscritos
     }
+
+    gebi("n1").value = totalInscritos
+    gebi("n3").value = totalInscritos
+    gebi("n5").value = totalInscritos
+    gebi("n7").value = totalInscritos
+    gebi("n9").value = totalInscritos
+    gebi("n11").value = totalInscritos
 }
+
+
+function local() {
+    if (!localStorage.getItem('total_inscritos')) {
+        localStorage.setItem('total_inscritos', "0");
+    }
+
+    var totalInscritos = localStorage.getItem('total_inscritos');
+    totalInscritos = parseInt(totalInscritos, 10)+ 1;
+    localStorage.setItem('total_inscritos', totalInscritos);
+  }
